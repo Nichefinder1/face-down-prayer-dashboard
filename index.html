@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Face Down Prayer | Women of Travail | Alpha Omega Chi — Unified Movement Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink: #D4638F;
+  --pink-light: #E8A0B8;
+  --pink-vivid: #E24D80;
+  --pink-glow: rgba(212, 99, 143, 0.18);
+  --pink-subtle: rgba(212, 99, 143, 0.07);
+  --pink-deep: #B84A75;
+  --white: #FAFAFA;
+  --white-warm: #F5F0EC;
+  --grey-100: #E8E4E0;
+  --grey-200: #C4BEB8;
+  --grey-300: #9A9490;
+  --grey-400: #6E6A66;
+  --grey-500: #4A4744;
+  --grey-600: #2E2C2A;
+  --grey-700: #1E1D1C;
+  --grey-800: #141313;
+  --grey-900: #0C0B0B;
+  --bg: #FAFAFA;
+  --bg-section: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-dark: #141313;
+  --text-primary: #1E1D1C;
+  --text-secondary: #6E6A66;
+  --text-muted: #9A9490;
+  --border: rgba(0,0,0,0.08);
+  --border-hover: rgba(212, 99, 143, 0.3);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.04);
+  --shadow-pink: 0 8px 32px rgba(212, 99, 143, 0.12);
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-xl: 24px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* === SCROLL PROGRESS === */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--pink), var(--pink-vivid), var(--pink-light));
+  z-index: 1000;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+/* === HEADER === */
+.hero {
+  background: var(--bg-dark);
+  color: var(--white);
+  padding: 80px 0 72px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 70vw;
+  height: 70vw;
+  background: radial-gradient(circle, rgba(212,99,143,0.08) 0%, transparent 55%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -40%;
+  left: -15%;
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(212,99,143,0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 48px;
+  position: relative;
+  z-index: 2;
+}
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 48px;
+}
+.hero-badge {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--pink-light);
+  background: rgba(212,99,143,0.12);
+  border: 1px solid rgba(212,99,143,0.2);
+  padding: 8px 20px;
+  border-radius: 100px;
+}
+.hero-date {
+  font-size: 13px;
+  color: var(--grey-300);
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 5vw, 68px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin-bottom: 12px;
+}
+.hero h1 .amp {
+  font-style: italic;
+  color: var(--pink);
+  font-weight: 400;
+}
+.hero-sub {
+  font-size: 18px;
+  color: var(--grey-300);
+  font-weight: 300;
+  max-width: 640px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+.hero-entities {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.entity-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 12px 22px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--grey-200);
+  transition: all 0.35s ease;
+}
+.entity-chip:hover {
+  background: rgba(212,99,143,0.1);
+  border-color: rgba(212,99,143,0.3);
+  color: var(--white);
+}
+.entity-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.entity-dot.prayer { background: var(--pink); }
+.entity-dot.travail { background: var(--pink-light); }
+.entity-dot.aoc { background: var(--grey-200); }
+
+/* === CONTAINER === */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+/* === NAV === */
+.sticky-nav {
+  position: sticky;
+  top: 3px;
+  z-index: 100;
+  background: rgba(250,250,250,0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+}
+.nav-inner {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+.nav-inner::-webkit-scrollbar { display: none; }
+.nav-btn {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 8px 20px;
+  border-radius: 100px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+.nav-btn:hover {
+  color: var(--pink);
+  border-color: var(--pink);
+  background: var(--pink-subtle);
+}
+.nav-btn.active {
+  color: white;
+  background: var(--pink);
+  border-color: var(--pink);
+}
+
+/* === SECTIONS === */
+.section {
+  padding: 72px 0;
+  opacity: 0;
+  transform: translateY(28px);
+}
+.section.visible {
+  animation: fadeUp 0.7s ease forwards;
+}
+.section + .section {
+  border-top: 1px solid var(--border);
+}
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin-bottom: 10px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.section-desc {
+  font-size: 16px;
+  color: var(--text-secondary);
+  font-weight: 300;
+  max-width: 680px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+/* === ECOSYSTEM FLOW === */
+.eco-flow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin: 40px 0;
+  position: relative;
+}
+@media (max-width: 900px) {
+  .eco-flow { grid-template-columns: 1fr; gap: 16px; }
+  .eco-arrow { display: none !important; }
+}
+.eco-step {
+  text-align: center;
+  padding: 40px 24px;
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  transition: all 0.4s ease;
+}
+.eco-step:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+.eco-step:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
+.eco-step:hover {
+  background: var(--pink-subtle);
+  border-color: var(--border-hover);
+  z-index: 2;
+}
+.eco-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--pink);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.eco-step h4 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+.eco-step p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 300;
+  line-height: 1.6;
+}
+.eco-arrow {
+  position: absolute;
+  right: -14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  color: var(--pink);
+  font-size: 14px;
+}
+
+/* === CARDS GRID === */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--pink), var(--pink-light));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+.card:hover::after { transform: scaleX(1); }
+.card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--pink-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.card h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.card p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* === CALLOUT === */
+.callout {
+  background: linear-gradient(135deg, var(--grey-800) 0%, var(--grey-700) 100%);
+  border-radius: var(--radius-xl);
+  padding: 52px;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+  margin: 40px 0;
+}
+.callout::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 50%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(212,99,143,0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+.callout h3 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 2;
+}
+.callout p {
+  font-size: 16px;
+  color: var(--grey-200);
+  font-weight: 300;
+  line-height: 1.8;
+  max-width: 740px;
+  position: relative;
+  z-index: 2;
+}
+
+/* === JOURNEY FLOW === */
+.journey {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin: 32px 0;
+  position: relative;
+}
+.journey::before {
+  content: '';
+  position: absolute;
+  left: 28px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--pink), var(--pink-light), var(--grey-100));
+}
+.journey-step {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 0;
+  align-items: start;
+  padding: 24px 0;
+}
+.journey-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.journey-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 3px solid var(--pink);
+  background: var(--bg);
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+.journey-step:hover .journey-dot {
+  background: var(--pink);
+  box-shadow: 0 0 0 6px var(--pink-glow);
+}
+.journey-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  transition: all 0.35s ease;
+}
+.journey-step:hover .journey-content {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-pink);
+}
+.journey-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin-bottom: 6px;
+}
+.journey-content h4 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.journey-content p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* === TARGET MARKETS === */
+.markets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+.market {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: all 0.35s ease;
+}
+.market:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+.market-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--pink-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.market h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.market p {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+/* === 3-ENTITY BREAKDOWN === */
+.entity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .entity-grid { grid-template-columns: 1fr; }
+}
+.entity-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+}
+.entity-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.entity-card.prayer::before { background: var(--pink); }
+.entity-card.travail::before { background: var(--pink-light); }
+.entity-card.aoc::before { background: var(--grey-400); }
+.entity-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.entity-card h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.entity-card .role {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin-bottom: 16px;
+  display: block;
+}
+.entity-card p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* === STRATEGIC LIST === */
+.strat-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+.strat-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: all 0.3s ease;
+}
+.strat-item:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-sm);
+}
+.strat-bullet {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--pink-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+.strat-item h4 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+.strat-item p { font-size: 13px; color: var(--text-secondary); font-weight: 300; line-height: 1.6; }
+
+/* === LEGACY SECTION === */
+.legacy-section {
+  background: var(--bg-dark);
+  padding: 80px 0;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.legacy-section::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80vw;
+  height: 80vw;
+  background: radial-gradient(circle, rgba(212,99,143,0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+.legacy-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  padding: 0 48px;
+}
+.legacy-inner .section-label { color: var(--pink-light); }
+.legacy-inner .section-title { color: var(--white); }
+.legacy-inner p {
+  font-size: 17px;
+  color: var(--grey-300);
+  font-weight: 300;
+  line-height: 1.85;
+  margin-bottom: 36px;
+}
+.legacy-pillars {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.legacy-pill {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--pink-light);
+  border: 1px solid rgba(212,99,143,0.25);
+  padding: 10px 24px;
+  border-radius: 100px;
+  background: rgba(212,99,143,0.08);
+}
+
+/* === CTA === */
+.cta-section {
+  padding: 64px 0;
+  border-top: 1px solid var(--border);
+}
+.cta-card {
+  background: linear-gradient(135deg, rgba(212,99,143,0.06) 0%, rgba(212,99,143,0.02) 100%);
+  border: 1px solid var(--border-hover);
+  border-radius: var(--radius-xl);
+  padding: 48px;
+  text-align: center;
+}
+.cta-card h3 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.cta-card p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* === FOOTER === */
+.footer {
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-left {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.footer-right {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.anim-hero { opacity: 0; animation: fadeUp 0.9s ease forwards; }
+.anim-hero-d1 { animation-delay: 0.15s; }
+.anim-hero-d2 { animation-delay: 0.3s; }
+.anim-hero-d3 { animation-delay: 0.45s; }
+.anim-hero-d4 { animation-delay: 0.6s; }
+
+/* === RESPONSIVE === */
+@media (max-width: 640px) {
+  .container, .hero-inner, .nav-inner, .legacy-inner { padding: 0 20px; }
+  .hero { padding: 48px 0 40px; }
+  .hero-top { flex-direction: column; gap: 12px; }
+  .hero-entities { flex-direction: column; gap: 10px; }
+  .section { padding: 48px 0; }
+  .callout { padding: 32px 24px; }
+  .entity-grid { grid-template-columns: 1fr; }
+  .footer { flex-direction: column; gap: 12px; text-align: center; }
+}
+
+/* === PRINT === */
+@media print {
+  .scroll-progress, .sticky-nav { display: none; }
+  .section { opacity: 1 !important; transform: none !important; page-break-inside: avoid; }
+  .hero { background: #333; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .legacy-section { background: #333; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+<!-- SCROLL PROGRESS -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- HERO HEADER -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-top anim-hero anim-hero-d1">
+      <span class="hero-badge">Unified Movement Ecosystem</span>
+      <span class="hero-date">Prepared February 2026</span>
+    </div>
+    <h1 class="anim-hero anim-hero-d2">Face Down Prayer<br><span class="amp">&</span> Women of Travail<br><span style="color:var(--grey-300); font-size:0.65em; font-weight:400;">Alpha Omega Chi</span></h1>
+    <p class="hero-sub anim-hero anim-hero-d3">Scaling Vision, Strategic Presentation & Spiritually Aligned Expansion Roadmap for a Unified Global Movement</p>
+    <div class="hero-entities anim-hero anim-hero-d4">
+      <span class="entity-chip"><span class="entity-dot prayer"></span>Face Down Prayer &mdash; Spiritual Posture</span>
+      <span class="entity-chip"><span class="entity-dot travail"></span>Women of Travail &mdash; Formation</span>
+      <span class="entity-chip"><span class="entity-dot aoc"></span>Alpha Omega Chi &mdash; Institutional Hub</span>
+    </div>
+  </div>
+</header>
+
+<!-- STICKY NAV -->
+<nav class="sticky-nav">
+  <div class="nav-inner">
+    <button class="nav-btn active" data-section="all">All</button>
+    <button class="nav-btn" data-section="alignment">Alignment</button>
+    <button class="nav-btn" data-section="ecosystem">Ecosystem</button>
+    <button class="nav-btn" data-section="strengths">Strengths</button>
+    <button class="nav-btn" data-section="scaling">Scaling</button>
+    <button class="nav-btn" data-section="markets">Markets</button>
+    <button class="nav-btn" data-section="journey">Sacred Journey</button>
+    <button class="nav-btn" data-section="global">Global Pathway</button>
+    <button class="nav-btn" data-section="infrastructure">Infrastructure</button>
+    <button class="nav-btn" data-section="strategic">Strategic</button>
+    <button class="nav-btn" data-section="legacy">Legacy</button>
+  </div>
+</nav>
+
+<main>
+
+<!-- EXECUTIVE ALIGNMENT -->
+<section class="section" data-id="alignment">
+  <div class="container">
+    <div class="section-label">Executive Statement</div>
+    <h2 class="section-title">Executive Alignment</h2>
+    <p class="section-desc">Three entities, one unified spiritual movement ecosystem. Each pillar serves a distinct role while flowing together as a seamless sacred experience.</p>
+
+    <div class="entity-grid">
+      <div class="entity-card prayer">
+        <h3>Face Down Prayer</h3>
+        <span class="role">Spiritual Posture & Core Prayer Lifestyle</span>
+        <p>The spiritual posture and core prayer lifestyle that anchors the entire movement in surrender, intercession, and spiritual depth.</p>
+      </div>
+      <div class="entity-card travail">
+        <h3>Women of Travail</h3>
+        <span class="role">Spiritual Formation & Transformation</span>
+        <p>The spiritual formation and transformation pathway that builds disciples, develops leaders, and strengthens generational engagement.</p>
+      </div>
+      <div class="entity-card aoc">
+        <h3>Alpha Omega Chi</h3>
+        <span class="role">Institutional Hub & Structure</span>
+        <p>The institutional hub providing structure, sisterhood, leadership development, governance, and long-term sustainability for the movement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ECOSYSTEM MODEL -->
+<section class="section" data-id="ecosystem">
+  <div class="container">
+    <div class="section-label">Movement Architecture</div>
+    <h2 class="section-title">Unified Ecosystem Model</h2>
+    <p class="section-desc">Not separate programs but one continuous spiritual journey. One sacred ecosystem rather than disconnected experiences.</p>
+
+    <div class="eco-flow">
+      <div class="eco-step">
+        <div class="eco-num">1</div>
+        <h4>Prayer Encounter</h4>
+        <p>Through Face Down Prayer &mdash; the initial spiritual encounter and posture of surrender</p>
+        <div class="eco-arrow">&rarr;</div>
+      </div>
+      <div class="eco-step">
+        <div class="eco-num">2</div>
+        <h4>Spiritual Formation</h4>
+        <p>Through Women of Travail &mdash; the transformation and discipleship pathway</p>
+        <div class="eco-arrow">&rarr;</div>
+      </div>
+      <div class="eco-step">
+        <div class="eco-num">3</div>
+        <h4>Sisterhood Alignment</h4>
+        <p>Through Alpha Omega Chi &mdash; structured community, accountability, and belonging</p>
+        <div class="eco-arrow">&rarr;</div>
+      </div>
+      <div class="eco-step">
+        <div class="eco-num">4</div>
+        <h4>Leadership & Intercession</h4>
+        <p>Multiplication of leaders and intercessors who expand the movement's reach</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRENT STRENGTHS -->
+<section class="section" data-id="strengths">
+  <div class="container">
+    <div class="section-label">Foundation</div>
+    <h2 class="section-title">Current Strengths Already Established</h2>
+    <p class="section-desc">The foundation is already established and spiritually effective. These are the mature assets already operating within the movement.</p>
+
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon">&#127760;</div>
+        <h3>Global Prayer Focus</h3>
+        <p>A worldwide prayer culture anchored in the Face Down Prayer posture, already reaching across nations and time zones.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128218;</div>
+        <h3>Structured Formation Programs</h3>
+        <p>Women of Travail provides a defined spiritual formation pathway with teachings, mentorship, and transformation milestones.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#127908;</div>
+        <h3>Conferences & Teachings</h3>
+        <p>Established conference model delivering deep spiritual encounters, teachings, and community gathering at scale.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#129309;</div>
+        <h3>Strong Sisterhood Model</h3>
+        <p>Multi-generational sisterhood bonds through Alpha Omega Chi creating lasting community, accountability, and spiritual covering.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCALING VISION -->
+<section class="section" data-id="scaling">
+  <div class="container">
+    <div class="section-label">Growth Strategy</div>
+    <h2 class="section-title">Scaling Without Disrupting the Foundation</h2>
+    <p class="section-desc">Spiritual reach, leadership multiplication, and structured expansion rather than volume-based growth.</p>
+
+    <div class="callout">
+      <h3>The Scaling Philosophy</h3>
+      <p>True scaling for this movement focuses on chapter development, global cohorts, and unified formation journeys that allow expansion while preserving spiritual depth and covering. Growth follows prayer, not the other way around.</p>
+    </div>
+
+    <div class="strat-list">
+      <div class="strat-item">
+        <div class="strat-bullet">&#127793;</div>
+        <div><h4>Chapter Development</h4><p>New chapters through prayer-led approvals and unified spiritual oversight</p></div>
+      </div>
+      <div class="strat-item">
+        <div class="strat-bullet">&#127758;</div>
+        <div><h4>Global Cohorts</h4><p>Virtual formation groups maintaining the same teachings and sisterhood connection worldwide</p></div>
+      </div>
+      <div class="strat-item">
+        <div class="strat-bullet">&#128214;</div>
+        <div><h4>Unified Formation Journeys</h4><p>Consistent spiritual pathways that preserve doctrinal consistency across regions</p></div>
+      </div>
+      <div class="strat-item">
+        <div class="strat-bullet">&#128081;</div>
+        <div><h4>Leadership Multiplication</h4><p>Developing leaders from within who carry the spiritual DNA and vision of the movement</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TARGET MARKETS -->
+<section class="section" data-id="markets">
+  <div class="container">
+    <div class="section-label">Expansion Audiences</div>
+    <h2 class="section-title">Untapped Target Markets</h2>
+    <p class="section-desc">Spiritually aligned expansion into audiences already seeking what this movement provides.</p>
+
+    <div class="markets">
+      <div class="market">
+        <div class="market-icon">&#128105;</div>
+        <div>
+          <h4>Young Adult Christian Women</h4>
+          <p>Seeking identity, purpose, and mentorship in their faith walk</p>
+        </div>
+      </div>
+      <div class="market">
+        <div class="market-icon">&#128156;</div>
+        <div>
+          <h4>Women in Healing Seasons</h4>
+          <p>Seeking restoration, spiritual covering, and safe community</p>
+        </div>
+      </div>
+      <div class="market">
+        <div class="market-icon">&#127757;</div>
+        <div>
+          <h4>Africa & Caribbean</h4>
+          <p>International faith communities with deep prayer cultures</p>
+        </div>
+      </div>
+      <div class="market">
+        <div class="market-icon">&#127468;&#127463;</div>
+        <div>
+          <h4>United Kingdom & Canada</h4>
+          <p>Diaspora communities seeking authentic spiritual sisterhood</p>
+        </div>
+      </div>
+      <div class="market">
+        <div class="market-icon">&#128591;</div>
+        <div>
+          <h4>Female Ministry Leaders</h4>
+          <p>Seeking spiritual covering, safe sisterhood, and accountability</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SACRED JOURNEY A-Z -->
+<section class="section" data-id="journey">
+  <div class="container">
+    <div class="section-label">A-to-Z Experience</div>
+    <h2 class="section-title">The Seamless Sacred Journey</h2>
+    <p class="section-desc">From first encounter to leadership &mdash; one unified spiritual journey experience that transforms and multiplies.</p>
+
+    <div class="journey">
+      <div class="journey-step">
+        <div class="journey-marker"><div class="journey-dot"></div></div>
+        <div class="journey-content">
+          <div class="journey-label">First Touch</div>
+          <h4>Encounter Through Content</h4>
+          <p>A woman discovers Face Down Prayer through spiritual content, social media, or a recommendation from a sister in the faith.</p>
+        </div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-marker"><div class="journey-dot"></div></div>
+        <div class="journey-content">
+          <div class="journey-label">Connection</div>
+          <h4>Prayer Request & Covering</h4>
+          <p>She submits a prayer request, receives spiritual encouragement and covering from intercessory teams, and feels the community's embrace.</p>
+        </div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-marker"><div class="journey-dot"></div></div>
+        <div class="journey-content">
+          <div class="journey-label">Gathering</div>
+          <h4>Prayer Community</h4>
+          <p>She is invited into a prayer gathering &mdash; virtual or in-person &mdash; and experiences the Face Down Prayer posture firsthand.</p>
+        </div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-marker"><div class="journey-dot"></div></div>
+        <div class="journey-content">
+          <div class="journey-label">Formation</div>
+          <h4>Women of Travail Journey</h4>
+          <p>She enters the Women of Travail formation pathway &mdash; teachings, mentorship, prayer journals, and spiritual milestones.</p>
+        </div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-marker"><div class="journey-dot"></div></div>
+        <div class="journey-content">
+          <div class="journey-label">Sisterhood</div>
+          <h4>Alpha Omega Chi Alignment</h4>
+          <p>After formation, she is prayerfully guided into deeper sisterhood alignment within Alpha Omega Chi &mdash; community, governance, and belonging.</p>
+        </div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-marker"><div class="journey-dot"></div></div>
+        <div class="journey-content">
+          <div class="journey-label">Multiplication</div>
+          <h4>Leadership & Intercession</h4>
+          <p>She eventually steps into leadership or intercessory roles, multiplying the movement's reach and impact for the next generation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GLOBAL FORMATION PATHWAY -->
+<section class="section" data-id="global">
+  <div class="container">
+    <div class="section-label">Global Reach</div>
+    <h2 class="section-title">Global Formation Pathway</h2>
+
+    <div class="cards-grid" style="margin-bottom:32px;">
+      <div class="card">
+        <div class="card-icon">&#127758;</div>
+        <h3>Global Cohorts</h3>
+        <p>The Women of Travail journey can be experienced across nations through structured cohorts that maintain the same teachings, prayer focus, and sisterhood connection.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128247;</div>
+        <h3>Intercessory Covering Network</h3>
+        <p>Prayer requests supported through designated prayer circles or intercessory teams, allowing participants to feel spiritually covered while maintaining reverence and pastoral care.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h3>Sacred Onboarding</h3>
+      <p>New participants receive spiritually written welcome messages, orientation guidance, prayer encouragement, and preparation resources for the Women of Travail journey. This ensures consistency, care, and a sacred first experience without removing the human and spiritual touch.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INFRASTRUCTURE -->
+<section class="section" data-id="infrastructure">
+  <div class="container">
+    <div class="section-label">Institutional Hub</div>
+    <h2 class="section-title">Alpha Omega Chi &mdash; Expansion Hub</h2>
+    <p class="section-desc">The sorority-based model that supports global scaling while maintaining order and spiritual accountability.</p>
+
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon">&#128200;</div>
+        <h3>Leadership Pipeline</h3>
+        <p>Structured development pathways that identify, train, and deploy leaders from within the sisterhood.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#127970;</div>
+        <h3>Chapter Multiplication</h3>
+        <p>Replicable chapter model allowing geographic expansion while maintaining spiritual consistency and governance.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128220;</div>
+        <h3>Governance Framework</h3>
+        <p>Institutional structure providing accountability, order, and spiritual oversight across all chapters and cohorts.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#9878;</div>
+        <h3>Long-Term Sustainability</h3>
+        <p>Self-sustaining model ensuring the movement continues beyond any single generation of leadership.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRATEGIC POSSIBILITIES -->
+<section class="section" data-id="strategic">
+  <div class="container">
+    <div class="section-label">Outside the Box</div>
+    <h2 class="section-title">Strategic Possibilities</h2>
+    <p class="section-desc">Advanced possibilities that emerge when structure supports an already anointed foundation.</p>
+
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon">&#128216;</div>
+        <h3>Doctrine & Methodology Archive</h3>
+        <p>Codify the Face Down Prayer doctrine and methodology into a comprehensive spiritual archive for current and future generations.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#127760;</div>
+        <h3>Global Digital Prayer Assemblies</h3>
+        <p>Live digital prayer gatherings connecting the worldwide sisterhood across time zones for unified intercession.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128203;</div>
+        <h3>Leadership Progression Mapping</h3>
+        <p>Clear progression pathways from first encounter through formation, sisterhood, and into leadership and multiplication roles.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128300;</div>
+        <h3>Unified Ecosystem Journey Model</h3>
+        <p>A seamless model connecting prayer, formation, sisterhood, and leadership development into one documented sacred pathway.</p>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:32px;">
+      <h3>Legacy Documentation</h3>
+      <p>Intentional documentation of testimonies, teachings, conferences, and transformation journeys creates a sacred historical archive that preserves the spiritual legacy, vision, and impact of the movement for future generations.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- LEGACY VISION -->
+<section class="legacy-section section" data-id="legacy">
+  <div class="legacy-inner">
+    <div class="section-label">The Vision</div>
+    <h2 class="section-title" style="font-size:clamp(30px,4vw,48px);">A Movement That Outlives Its Founders</h2>
+    <p>This presentation is designed to highlight what is possible when structure supports an already anointed foundation. The ecosystem of Face Down Prayer, Women of Travail, and Alpha Omega Chi is positioned as a unified global spiritual movement with the capacity for deeper reach, stronger covering, leadership multiplication, and preserved legacy across generations.</p>
+    <div class="legacy-pillars">
+      <span class="legacy-pill">Deeper Reach</span>
+      <span class="legacy-pill">Stronger Covering</span>
+      <span class="legacy-pill">Leadership Multiplication</span>
+      <span class="legacy-pill">Preserved Legacy</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA + FOOTER -->
+<div class="container">
+  <section class="cta-section section" data-id="cta">
+    <div class="cta-card">
+      <h3>Ready for the Next Step?</h3>
+      <p>A deeper strategic expansion brief can be developed outlining a unified ecosystem journey map, global market prioritization, leadership multiplication pathways, and a spiritually aligned A-to-Z experience model tailored to the movement's structure and vision.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-left">Nichefinder AI Agency &mdash; Confidential</div>
+    <div class="footer-right">Prepared with purpose & precision</div>
+  </footer>
+</div>
+
+<script>
+// Scroll progress bar
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  document.getElementById('scrollProgress').style.width = pct + '%';
+});
+
+// Scroll-triggered reveals
+const sections = document.querySelectorAll('.section');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+sections.forEach(s => revealObs.observe(s));
+
+// Nav filtering
+const navBtns = document.querySelectorAll('.nav-btn');
+navBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    navBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const target = btn.dataset.section;
+
+    sections.forEach(section => {
+      if (target === 'all' || section.dataset.id === target) {
+        section.style.display = '';
+        section.classList.remove('visible');
+        void section.offsetWidth;
+        section.classList.add('visible');
+      } else {
+        section.style.display = 'none';
+      }
+    });
+
+    if (target !== 'all') {
+      const el = document.querySelector(`.section[data-id="${target}"]`);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+});
+
+// Active nav tracking on scroll
+const sectionEls = [...document.querySelectorAll('.section[data-id]')];
+const navTracker = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const id = e.target.dataset.id;
+      navBtns.forEach(b => {
+        b.classList.toggle('active', b.dataset.section === id);
+      });
+    }
+  });
+}, { threshold: 0.3 });
+sectionEls.forEach(s => navTracker.observe(s));
+</script>
+
+</body>
+</html>

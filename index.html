@@ -696,6 +696,107 @@ body {
   background: rgba(212,99,143,0.08);
 }
 
+/* === KEYWORDS === */
+.kw-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.kw-count {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: var(--pink-subtle);
+  border: 1px solid var(--border);
+  padding: 6px 16px;
+  border-radius: 100px;
+}
+.kw-filters {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.kw-filter {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 6px 16px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.kw-filter:hover, .kw-filter.active {
+  color: white;
+  background: var(--pink);
+  border-color: var(--pink);
+}
+.kw-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.kw-tag {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-primary);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 10px 20px;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+  cursor: default;
+  position: relative;
+}
+.kw-tag:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+.kw-tag .kw-cat {
+  display: none;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin-left: 8px;
+}
+.kw-tag:hover .kw-cat {
+  display: inline;
+}
+.kw-tag.cat-prayer { border-left: 3px solid var(--pink); }
+.kw-tag.cat-formation { border-left: 3px solid var(--pink-light); }
+.kw-tag.cat-sisterhood { border-left: 3px solid var(--grey-400); }
+.kw-tag.cat-healing { border-left: 3px solid #B88EC4; }
+.kw-tag.cat-global { border-left: 3px solid #7CAEB8; }
+.kw-tag.cat-leadership { border-left: 3px solid #C4A46E; }
+.kw-legend {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.kw-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.kw-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+
 /* === CTA === */
 .cta-section {
   padding: 64px 0;
@@ -811,6 +912,7 @@ body {
     <button class="nav-btn" data-section="global">Global Pathway</button>
     <button class="nav-btn" data-section="infrastructure">Infrastructure</button>
     <button class="nav-btn" data-section="strategic">Strategic</button>
+    <button class="nav-btn" data-section="keywords">Keywords</button>
     <button class="nav-btn" data-section="legacy">Legacy</button>
   </div>
 </nav>
@@ -1148,6 +1250,101 @@ body {
 
 </main>
 
+<!-- CONTENT DISTRIBUTION KEYWORDS -->
+<section class="section" data-id="keywords">
+  <div class="container">
+    <div class="section-label">Content Distribution</div>
+    <h2 class="section-title">50 Strategic Keywords</h2>
+    <p class="section-desc">Targeted keywords organized by category to reach each segment of the target market through blog posts, social media, video titles, and search-optimized content.</p>
+
+    <div class="kw-header">
+      <span class="kw-count">50 Keywords</span>
+      <div class="kw-filters">
+        <button class="kw-filter active" data-cat="all">All</button>
+        <button class="kw-filter" data-cat="prayer">Prayer &amp; Intercession</button>
+        <button class="kw-filter" data-cat="formation">Spiritual Formation</button>
+        <button class="kw-filter" data-cat="sisterhood">Sisterhood &amp; Community</button>
+        <button class="kw-filter" data-cat="healing">Healing &amp; Restoration</button>
+        <button class="kw-filter" data-cat="global">Global &amp; Missions</button>
+        <button class="kw-filter" data-cat="leadership">Leadership &amp; Legacy</button>
+      </div>
+    </div>
+
+    <div class="kw-grid" id="kwGrid">
+      <!-- PRAYER & INTERCESSION -->
+      <span class="kw-tag cat-prayer" data-cat="prayer">intercessory prayer for women<span class="kw-cat">Prayer</span></span>
+      <span class="kw-tag cat-prayer" data-cat="prayer">face down prayer movement<span class="kw-cat">Prayer</span></span>
+      <span class="kw-tag cat-prayer" data-cat="prayer">how to pray with surrender<span class="kw-cat">Prayer</span></span>
+      <span class="kw-tag cat-prayer" data-cat="prayer">women's prayer group near me<span class="kw-cat">Prayer</span></span>
+      <span class="kw-tag cat-prayer" data-cat="prayer">prayer covering for women<span class="kw-cat">Prayer</span></span>
+      <span class="kw-tag cat-prayer" data-cat="prayer">travailing prayer meaning<span class="kw-cat">Prayer</span></span>
+      <span class="kw-tag cat-prayer" data-cat="prayer">corporate prayer for Christian women<span class="kw-cat">Prayer</span></span>
+      <span class="kw-tag cat-prayer" data-cat="prayer">prayer postures in the Bible<span class="kw-cat">Prayer</span></span>
+      <span class="kw-tag cat-prayer" data-cat="prayer">virtual prayer gathering online<span class="kw-cat">Prayer</span></span>
+      <span class="kw-tag cat-prayer" data-cat="prayer">how to become an intercessor<span class="kw-cat">Prayer</span></span>
+
+      <!-- SPIRITUAL FORMATION -->
+      <span class="kw-tag cat-formation" data-cat="formation">women's discipleship program<span class="kw-cat">Formation</span></span>
+      <span class="kw-tag cat-formation" data-cat="formation">spiritual formation for women<span class="kw-cat">Formation</span></span>
+      <span class="kw-tag cat-formation" data-cat="formation">Christian mentorship for young women<span class="kw-cat">Formation</span></span>
+      <span class="kw-tag cat-formation" data-cat="formation">faith journey for women<span class="kw-cat">Formation</span></span>
+      <span class="kw-tag cat-formation" data-cat="formation">women of God Bible study<span class="kw-cat">Formation</span></span>
+      <span class="kw-tag cat-formation" data-cat="formation">spiritual growth plan for women<span class="kw-cat">Formation</span></span>
+      <span class="kw-tag cat-formation" data-cat="formation">prayer journal for Christian women<span class="kw-cat">Formation</span></span>
+      <span class="kw-tag cat-formation" data-cat="formation">women's devotional on prayer<span class="kw-cat">Formation</span></span>
+      <span class="kw-tag cat-formation" data-cat="formation">spiritual accountability partner<span class="kw-cat">Formation</span></span>
+
+      <!-- SISTERHOOD & COMMUNITY -->
+      <span class="kw-tag cat-sisterhood" data-cat="sisterhood">Christian sisterhood organization<span class="kw-cat">Sisterhood</span></span>
+      <span class="kw-tag cat-sisterhood" data-cat="sisterhood">women's faith community<span class="kw-cat">Sisterhood</span></span>
+      <span class="kw-tag cat-sisterhood" data-cat="sisterhood">Christian sorority for women<span class="kw-cat">Sisterhood</span></span>
+      <span class="kw-tag cat-sisterhood" data-cat="sisterhood">sisterhood in Christ<span class="kw-cat">Sisterhood</span></span>
+      <span class="kw-tag cat-sisterhood" data-cat="sisterhood">women's ministry fellowship<span class="kw-cat">Sisterhood</span></span>
+      <span class="kw-tag cat-sisterhood" data-cat="sisterhood">multi-generational women's ministry<span class="kw-cat">Sisterhood</span></span>
+      <span class="kw-tag cat-sisterhood" data-cat="sisterhood">safe community for Christian women<span class="kw-cat">Sisterhood</span></span>
+      <span class="kw-tag cat-sisterhood" data-cat="sisterhood">women supporting women in faith<span class="kw-cat">Sisterhood</span></span>
+
+      <!-- HEALING & RESTORATION -->
+      <span class="kw-tag cat-healing" data-cat="healing">healing prayer for women<span class="kw-cat">Healing</span></span>
+      <span class="kw-tag cat-healing" data-cat="healing">spiritual restoration after trauma<span class="kw-cat">Healing</span></span>
+      <span class="kw-tag cat-healing" data-cat="healing">Christian women's healing retreat<span class="kw-cat">Healing</span></span>
+      <span class="kw-tag cat-healing" data-cat="healing">prayer for broken women<span class="kw-cat">Healing</span></span>
+      <span class="kw-tag cat-healing" data-cat="healing">overcoming pain through prayer<span class="kw-cat">Healing</span></span>
+      <span class="kw-tag cat-healing" data-cat="healing">finding identity in Christ as a woman<span class="kw-cat">Healing</span></span>
+      <span class="kw-tag cat-healing" data-cat="healing">women's conference on healing<span class="kw-cat">Healing</span></span>
+      <span class="kw-tag cat-healing" data-cat="healing">faith-based support for women<span class="kw-cat">Healing</span></span>
+
+      <!-- GLOBAL & MISSIONS -->
+      <span class="kw-tag cat-global" data-cat="global">global women's prayer movement<span class="kw-cat">Global</span></span>
+      <span class="kw-tag cat-global" data-cat="global">Christian women's ministry Africa<span class="kw-cat">Global</span></span>
+      <span class="kw-tag cat-global" data-cat="global">Caribbean faith community women<span class="kw-cat">Global</span></span>
+      <span class="kw-tag cat-global" data-cat="global">UK Christian women's group<span class="kw-cat">Global</span></span>
+      <span class="kw-tag cat-global" data-cat="global">international prayer network<span class="kw-cat">Global</span></span>
+      <span class="kw-tag cat-global" data-cat="global">online ministry for women worldwide<span class="kw-cat">Global</span></span>
+      <span class="kw-tag cat-global" data-cat="global">virtual women's Bible study global<span class="kw-cat">Global</span></span>
+      <span class="kw-tag cat-global" data-cat="global">diaspora Christian women fellowship<span class="kw-cat">Global</span></span>
+
+      <!-- LEADERSHIP & LEGACY -->
+      <span class="kw-tag cat-leadership" data-cat="leadership">women in ministry leadership<span class="kw-cat">Leadership</span></span>
+      <span class="kw-tag cat-leadership" data-cat="leadership">Christian women's leadership development<span class="kw-cat">Leadership</span></span>
+      <span class="kw-tag cat-leadership" data-cat="leadership">raising women leaders in the church<span class="kw-cat">Leadership</span></span>
+      <span class="kw-tag cat-leadership" data-cat="leadership">spiritual legacy for women<span class="kw-cat">Leadership</span></span>
+      <span class="kw-tag cat-leadership" data-cat="leadership">women's ministry leadership training<span class="kw-cat">Leadership</span></span>
+      <span class="kw-tag cat-leadership" data-cat="leadership">generational impact Christian women<span class="kw-cat">Leadership</span></span>
+      <span class="kw-tag cat-leadership" data-cat="leadership">women's empowerment through faith<span class="kw-cat">Leadership</span></span>
+    </div>
+
+    <div class="kw-legend">
+      <div class="kw-legend-item"><div class="kw-legend-dot" style="background:var(--pink)"></div> Prayer &amp; Intercession (10)</div>
+      <div class="kw-legend-item"><div class="kw-legend-dot" style="background:var(--pink-light)"></div> Spiritual Formation (9)</div>
+      <div class="kw-legend-item"><div class="kw-legend-dot" style="background:var(--grey-400)"></div> Sisterhood &amp; Community (8)</div>
+      <div class="kw-legend-item"><div class="kw-legend-dot" style="background:#B88EC4"></div> Healing &amp; Restoration (8)</div>
+      <div class="kw-legend-item"><div class="kw-legend-dot" style="background:#7CAEB8"></div> Global &amp; Missions (8)</div>
+      <div class="kw-legend-item"><div class="kw-legend-dot" style="background:#C4A46E"></div> Leadership &amp; Legacy (7)</div>
+    </div>
+  </div>
+</section>
+
 <!-- LEGACY VISION -->
 <section class="legacy-section section" data-id="legacy">
   <div class="legacy-inner">
@@ -1234,6 +1431,31 @@ const navTracker = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.3 });
 sectionEls.forEach(s => navTracker.observe(s));
+
+// Keyword category filtering
+const kwFilters = document.querySelectorAll('.kw-filter');
+const kwTags = document.querySelectorAll('.kw-tag');
+kwFilters.forEach(btn => {
+  btn.addEventListener('click', () => {
+    kwFilters.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.cat;
+    kwTags.forEach(tag => {
+      if (cat === 'all' || tag.dataset.cat === cat) {
+        tag.style.display = '';
+        tag.style.opacity = '0';
+        tag.style.transform = 'scale(0.9)';
+        requestAnimationFrame(() => {
+          tag.style.transition = 'all 0.3s ease';
+          tag.style.opacity = '1';
+          tag.style.transform = 'scale(1)';
+        });
+      } else {
+        tag.style.display = 'none';
+      }
+    });
+  });
+});
 </script>
 
 </body>

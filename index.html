@@ -797,6 +797,56 @@ body {
   border-radius: 3px;
 }
 
+/* === STAT BANNER === */
+.stat-banner {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 32px 0;
+}
+.stat-banner-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+}
+@media (max-width: 768px) {
+  .stat-banner-inner { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+}
+.stat-item {
+  text-align: center;
+  position: relative;
+}
+.stat-item + .stat-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: var(--border);
+}
+@media (max-width: 768px) {
+  .stat-item + .stat-item::before { display: none; }
+}
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--pink);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-text {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
 /* === CTA === */
 .cta-section {
   padding: 64px 0;
@@ -899,6 +949,17 @@ body {
   </div>
 </header>
 
+<!-- STAT BANNER -->
+<div class="stat-banner">
+  <div class="stat-banner-inner">
+    <div class="stat-item"><div class="stat-number">40+</div><div class="stat-text">States with Chapters</div></div>
+    <div class="stat-item"><div class="stat-number">7</div><div class="stat-text">Countries Reached</div></div>
+    <div class="stat-item"><div class="stat-number">8-Week</div><div class="stat-text">WOT Formation Course</div></div>
+    <div class="stat-item"><div class="stat-number">3</div><div class="stat-text">Published Books</div></div>
+    <div class="stat-item"><div class="stat-number">1st Sat</div><div class="stat-text">Monthly Global Prayer</div></div>
+  </div>
+</div>
+
 <!-- STICKY NAV -->
 <nav class="sticky-nav">
   <div class="nav-inner">
@@ -924,23 +985,23 @@ body {
   <div class="container">
     <div class="section-label">Executive Statement</div>
     <h2 class="section-title">Executive Alignment</h2>
-    <p class="section-desc">Three entities, one unified spiritual movement ecosystem. Each pillar serves a distinct role while flowing together as a seamless sacred experience.</p>
+    <p class="section-desc">Led by Bishop Donald L. & Evangelist Lady Barbara A. Golder from Temple of Praise Assembly in Indianapolis, IN &mdash; three entities operating as one unified spiritual movement ecosystem with chapters in 40+ states and 7 countries.</p>
 
     <div class="entity-grid">
       <div class="entity-card prayer">
         <h3>Face Down Prayer</h3>
-        <span class="role">Spiritual Posture & Core Prayer Lifestyle</span>
-        <p>The spiritual posture and core prayer lifestyle that anchors the entire movement in surrender, intercession, and spiritual depth.</p>
+        <span class="role">The International Face Down Prayer Movement</span>
+        <p>The spiritual posture and core prayer lifestyle anchoring the entire movement. Chapters across 40+ states and 7 countries unite on the first Saturday of every month at 10:00am EST for global corporate prayer.</p>
       </div>
       <div class="entity-card travail">
         <h3>Women of Travail</h3>
-        <span class="role">Spiritual Formation & Transformation</span>
-        <p>The spiritual formation and transformation pathway that builds disciples, develops leaders, and strengthens generational engagement.</p>
+        <span class="role">Annual 8-Week Prayer Empowerment Course</span>
+        <p>A free annual 8-week prayer and empowerment course for women of all ages, ethnicities, and backgrounds. Offered in-person at Temple of Praise Assembly and virtually via Facebook Live. 2026 cohort: Feb 24 &ndash; Apr 14 (Tuesdays, 7&ndash;8:30pm EST).</p>
       </div>
       <div class="entity-card aoc">
         <h3>Alpha Omega Chi</h3>
-        <span class="role">Institutional Hub & Structure</span>
-        <p>The institutional hub providing structure, sisterhood, leadership development, governance, and long-term sustainability for the movement.</p>
+        <span class="role">Christian Sorority, Inc. &mdash; Founded 2015</span>
+        <p>Founded in the Dayton/Cincinnati, OH area, AOCCSI is a Christian sorority built on a foundation of Face Down Prayer. Its purpose: eradicate the social, economic, emotional, physical, and spiritual disparity affecting women and girls worldwide.</p>
       </div>
     </div>
   </div>
@@ -991,23 +1052,33 @@ body {
     <div class="cards-grid">
       <div class="card">
         <div class="card-icon">&#127760;</div>
-        <h3>Global Prayer Focus</h3>
-        <p>A worldwide prayer culture anchored in the Face Down Prayer posture, already reaching across nations and time zones.</p>
+        <h3>40+ State & 7-Country Prayer Network</h3>
+        <p>Established prayer chapters across 40+ U.S. states and 7 countries, uniting on the first Saturday of every month at 10:00am EST for corporate prayer. A proven global infrastructure already in operation.</p>
       </div>
       <div class="card">
         <div class="card-icon">&#128218;</div>
-        <h3>Structured Formation Programs</h3>
-        <p>Women of Travail provides a defined spiritual formation pathway with teachings, mentorship, and transformation milestones.</p>
+        <h3>Free 8-Week WOT Formation Course</h3>
+        <p>Women of Travail provides a structured, free annual 8-week prayer empowerment course delivered in-person and virtually via Facebook Live &mdash; open to women of all ages, ethnicities, and backgrounds.</p>
       </div>
       <div class="card">
         <div class="card-icon">&#127908;</div>
-        <h3>Conferences & Teachings</h3>
-        <p>Established conference model delivering deep spiritual encounters, teachings, and community gathering at scale.</p>
+        <h3>Annual International Conference</h3>
+        <p>The International Face Down Prayer Conference brings major speakers, bishops, pastors, and worship leaders together annually. Historically held at Temple of Praise Assembly with expansion into Atlanta.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128214;</div>
+        <h3>Published Author & Teaching Library</h3>
+        <p>Three published books by Evangelist Lady Barbara Golder: "By Faith, There's Hope, of Joy," "Face Down: International Prayer," and "Women of Travail Demon Slayers" &mdash; available through the ministry and online retailers.</p>
       </div>
       <div class="card">
         <div class="card-icon">&#129309;</div>
-        <h3>Strong Sisterhood Model</h3>
-        <p>Multi-generational sisterhood bonds through Alpha Omega Chi creating lasting community, accountability, and spiritual covering.</p>
+        <h3>Alpha Omega Chi Sorority (Est. 2015)</h3>
+        <p>A structured Christian sorority providing sisterhood, accountability, leadership development, and community service. Hosts annual High Tea events for prospective members and operates the Alpha Genesis Chapter.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128085;</div>
+        <h3>Ministry Merchandise & E-Commerce</h3>
+        <p>Active online shop at wotfd.com featuring conference apparel ("Look Up" graphic tees), Face Down Logo caps, books, and ministry resources &mdash; supporting the movement and extending brand visibility.</p>
       </div>
     </div>
   </div>
@@ -1022,7 +1093,7 @@ body {
 
     <div class="callout">
       <h3>The Scaling Philosophy</h3>
-      <p>True scaling for this movement focuses on chapter development, global cohorts, and unified formation journeys that allow expansion while preserving spiritual depth and covering. Growth follows prayer, not the other way around.</p>
+      <p>The movement has already proven it can scale &mdash; 40+ state chapters, 7 countries, an annual international conference, and a virtual WOT cohort model. The next phase focuses on deepening this reach through structured chapter development, global cohorts, and unified formation journeys while preserving spiritual depth. Growth follows prayer, not the other way around.</p>
     </div>
 
     <div class="strat-list">
@@ -1072,14 +1143,14 @@ body {
         <div class="market-icon">&#127757;</div>
         <div>
           <h4>Africa & Caribbean</h4>
-          <p>International faith communities with deep prayer cultures</p>
+          <p>International faith communities with deep prayer cultures &mdash; expanding beyond the 7 countries already reached</p>
         </div>
       </div>
       <div class="market">
         <div class="market-icon">&#127468;&#127463;</div>
         <div>
           <h4>United Kingdom & Canada</h4>
-          <p>Diaspora communities seeking authentic spiritual sisterhood</p>
+          <p>Diaspora communities seeking authentic spiritual sisterhood &mdash; virtual WOT cohorts make this immediately accessible</p>
         </div>
       </div>
       <div class="market">
@@ -1162,19 +1233,24 @@ body {
     <div class="cards-grid" style="margin-bottom:32px;">
       <div class="card">
         <div class="card-icon">&#127758;</div>
-        <h3>Global Cohorts</h3>
-        <p>The Women of Travail journey can be experienced across nations through structured cohorts that maintain the same teachings, prayer focus, and sisterhood connection.</p>
+        <h3>Virtual + In-Person WOT Cohorts</h3>
+        <p>The 8-week WOT course already runs in-person at Temple of Praise Assembly (3969 Meadows Dr, Indianapolis) AND virtually via Facebook Live for students outside Indianapolis. This hybrid model is ready for global replication.</p>
       </div>
       <div class="card">
         <div class="card-icon">&#128247;</div>
-        <h3>Intercessory Covering Network</h3>
-        <p>Prayer requests supported through designated prayer circles or intercessory teams, allowing participants to feel spiritually covered while maintaining reverence and pastoral care.</p>
+        <h3>Monthly Global Prayer Saturdays</h3>
+        <p>Every first Saturday at 10:00am EST, chapters across 40+ states and 7 countries gather simultaneously for corporate prayer. This existing rhythm provides the infrastructure for intercessory covering at scale.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128214;</div>
+        <h3>Published Teaching Resources</h3>
+        <p>"Face Down: International Prayer," "By Faith, There's Hope, of Joy," and "Women of Travail Demon Slayers" provide doctrinal foundations that can anchor formation cohorts worldwide with consistent teaching.</p>
       </div>
     </div>
 
     <div class="callout">
-      <h3>Sacred Onboarding</h3>
-      <p>New participants receive spiritually written welcome messages, orientation guidance, prayer encouragement, and preparation resources for the Women of Travail journey. This ensures consistency, care, and a sacred first experience without removing the human and spiritual touch.</p>
+      <h3>Sacred Onboarding &mdash; Already in Motion</h3>
+      <p>The 2026 WOT cohort (Feb 24 &ndash; Apr 14, Tuesdays 7&ndash;8:30pm EST) demonstrates the model is proven and repeatable. With automated yet spiritually written welcome messages, orientation guidance, and prayer encouragement, this onboarding pathway can scale globally while preserving the human and spiritual touch that defines the movement.</p>
     </div>
   </div>
 </section>
@@ -1184,28 +1260,28 @@ body {
   <div class="container">
     <div class="section-label">Institutional Hub</div>
     <h2 class="section-title">Alpha Omega Chi &mdash; Expansion Hub</h2>
-    <p class="section-desc">The sorority-based model that supports global scaling while maintaining order and spiritual accountability.</p>
+    <p class="section-desc">Founded in 2015 in the Dayton/Cincinnati, OH area, Alpha Omega Chi Christian Sorority, Inc. (AOCCSI) is built on a foundation of Face Down Prayer. The name is symbolic &mdash; Alpha Omega Chi represents Christ, the beginning and the end.</p>
 
     <div class="cards-grid">
       <div class="card">
         <div class="card-icon">&#128200;</div>
         <h3>Leadership Pipeline</h3>
-        <p>Structured development pathways that identify, train, and deploy leaders from within the sisterhood.</p>
+        <p>The Alpha Genesis Chapter established the intake and membership model. Annual High Tea events introduce prospective members to the sorority, creating a structured pipeline from interest to full sisterhood alignment.</p>
       </div>
       <div class="card">
         <div class="card-icon">&#127970;</div>
         <h3>Chapter Multiplication</h3>
-        <p>Replicable chapter model allowing geographic expansion while maintaining spiritual consistency and governance.</p>
+        <p>The proven chapter model from Face Down Prayer (40+ states, 7 countries) provides the blueprint. AOC can replicate through prayer-led chapter approvals, maintaining spiritual consistency across geographies.</p>
       </div>
       <div class="card">
         <div class="card-icon">&#128220;</div>
-        <h3>Governance Framework</h3>
-        <p>Institutional structure providing accountability, order, and spiritual oversight across all chapters and cohorts.</p>
+        <h3>Philanthropic Mission</h3>
+        <p>AOC's core purpose: eradicate the increasing social, economic, emotional, physical, and spiritual disparity affecting women and girls in society through community service and philanthropic endeavors.</p>
       </div>
       <div class="card">
         <div class="card-icon">&#9878;</div>
         <h3>Long-Term Sustainability</h3>
-        <p>Self-sustaining model ensuring the movement continues beyond any single generation of leadership.</p>
+        <p>The sorority model provides institutional permanence &mdash; governance, bylaws, membership intake, and chapter structure ensure the movement continues beyond any single generation of leadership.</p>
       </div>
     </div>
   </div>
@@ -1350,7 +1426,7 @@ body {
   <div class="legacy-inner">
     <div class="section-label">The Vision</div>
     <h2 class="section-title" style="font-size:clamp(30px,4vw,48px);">A Movement That Outlives Its Founders</h2>
-    <p>This presentation is designed to highlight what is possible when structure supports an already anointed foundation. The ecosystem of Face Down Prayer, Women of Travail, and Alpha Omega Chi is positioned as a unified global spiritual movement with the capacity for deeper reach, stronger covering, leadership multiplication, and preserved legacy across generations.</p>
+    <p>As Evangelist Lady Barbara Golder has said: "Prayer releases the heavens into the earth." This presentation highlights what is possible when structure supports an already anointed foundation. The ecosystem of Face Down Prayer, Women of Travail, and Alpha Omega Chi is positioned as a unified global spiritual movement with the capacity for deeper reach, stronger covering, leadership multiplication, and preserved legacy across generations.</p>
     <div class="legacy-pillars">
       <span class="legacy-pill">Deeper Reach</span>
       <span class="legacy-pill">Stronger Covering</span>
